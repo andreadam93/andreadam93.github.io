@@ -1,0 +1,14 @@
+
+title: "Andrea D'Ambrosio | Aerospace and AI"
+description: "Research in astrodynamics, optimal control, and AI for aerospace"
+baseurl: ""
+url: ""
+author: "Andrea D'Ambrosio"
+email: "andreadam93@gmail.com"
+github_username: andreadam93
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
