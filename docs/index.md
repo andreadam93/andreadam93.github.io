@@ -5,7 +5,7 @@ title: "About"
 
 # Andrea D’Ambrosio
 
-![Profile Picture](assets/CV/WEB_Z2A9255.jpg){: .profile-picture }
+
 
 Welcome to my academic website. I am an Incoming Assistant Professor at the Department of Mechanical and Aerospace Engineering of University of South Florida working on **Astrodynamics, Optimal Control, Space Situational Awareness, and Artificial Intelligence for Aerospace Systems**.
 
