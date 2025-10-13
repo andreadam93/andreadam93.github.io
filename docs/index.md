@@ -5,11 +5,11 @@ title: "About Me"
 
 # Andrea D’Ambrosio
 
-Welcome to my academic website. I am an Assistant Professor working on **Astrodynamics, Optimal Control, and Artificial Intelligence for Aerospace Systems**.
+![Profile Picture](/CV/WEB_Z2A9255.jpg){: .profile-picture }
 
-My research focuses on enhancing the autonomy of aerospace systems through machine learning frameworks integrated with physics-based models, and on ensuring the safety and sustainability of the space environment through Space Situational Awareness (SSA) applications.
+Welcome to my academic website. I am an Incoming Assistant Professor at the Department of Mechanical and Aerospace Engineering of University of South Florida working on **Astrodynamics, Optimal Control, Space Situational Awareness, and Artificial Intelligence for Aerospace Systems**.
 
-You can learn more about my work in the [Research](./research/) and [Teaching](./teaching) sections.
+My research primarily focuses on two areas: Space Situational Awareness (SSA), which includes space object behavior analysis and orbit determination, exploiting machine learning, and Optimal Guidance and Control, with a particular emphasis on the application of machine learning and functional interpolation techniques, such as Physics-Informed Neural Networks (PINNs) and the Theory of Functional Connections (TFC), to increase the efficiency, autonomy, and safety of aerospace systems.
 
-![Space Banner](./assets/images/banner.jpg)
+You can learn more about my work in the [Research](./research/)sections.
 
