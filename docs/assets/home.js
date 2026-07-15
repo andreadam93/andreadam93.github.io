@@ -7,12 +7,8 @@ const guidanceTopicOrder = [
 ];
 
 const guidanceTopicList = document.querySelector(".research-topic-list");
-const guidanceChronology = document.querySelector(".research-chronology");
-const guidanceTopicLabels = ["01 - 2025 - Most recent", "02 - 2022", "03 - 2022", "04 - 2021", "05 - 2023"];
+const guidanceTopicLabels = ["01 - 2025", "02 - 2022", "03 - 2022", "04 - 2021", "05 - 2023"];
 if (guidanceTopicList && guidanceTopicOrder.every((id) => document.getElementById(id))) {
-  if (guidanceChronology) {
-    guidanceChronology.textContent = "Topics are arranged from neural optimal control through mission applications.";
-  }
 
   guidanceTopicOrder.forEach((id, position) => {
     const topic = document.getElementById(id);
