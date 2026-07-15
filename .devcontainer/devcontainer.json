@@ -1,0 +1,14 @@
+﻿{
+    "name":  "CIRO private website preview",
+    "image":  "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+    "forwardPorts":  [
+                         8000
+                     ],
+    "portsAttributes":  {
+                            "8000":  {
+                                         "label":  "CIRO private website preview",
+                                         "onAutoForward":  "openPreview"
+                                     }
+                        },
+    "postStartCommand":  "nohup python3 -m http.server 8000 --directory docs \u003e/tmp/ciro-preview.log 2\u003e\u00261 \u0026"
+}
