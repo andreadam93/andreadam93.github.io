@@ -9,6 +9,7 @@
   <link rel="preload" href="./images/lunar-landing.png" as="image" />
   <link rel="stylesheet" href="./assets/index-BwdqSdsG.css" />
   <link rel="stylesheet" href="./assets/home.css" />
+  <script src="./assets/home.js" defer></script>
   <title>CIRO | Aerospace Guidance, Space Safety &amp; Scientific Machine Learning</title>
   <meta name="description" content="CIRO advances optimal guidance and control, space situational awareness, astrodynamics, and scientific machine learning for aerospace applications." />
   <link rel="shortcut icon" href="./images/ciro-badge.png" />
@@ -26,7 +27,7 @@
         <span class="orbital-mark" aria-hidden="true">
           <span class="mark-core"></span><span class="mark-orbit mark-orbit-one"></span><span class="mark-orbit mark-orbit-two"></span><span class="mark-dot"></span>
         </span>
-        <span class="brand-copy"><strong>CIRO</strong><small>Computational Intelligence for Aerospace Systems</small></span>
+        <span class="brand-copy"><strong>CIRO</strong><small>Computational Intelligence for Robotics &amp; Orbital Dynamics</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="./about">About</a><a href="./research">Research</a><a href="./people">People</a><a href="./publications">Publications</a><a href="./news">News</a><a href="./teaching">Teaching</a><a href="./contact">Contact</a><a class="nav-cta" href="./join">Join CIRO</a>
@@ -99,30 +100,62 @@
           <p>Physics-based models, optimization, estimation, and learning come together to improve aerospace autonomy, safety, and sustainability.</p>
         </div>
         <div class="pillars-grid image-pillars">
-          <a class="pillar" href="./research/guidance-control/">
+          <article class="pillar">
             <span class="pillar-number">01 · GNC</span>
-            <figure class="pillar-image"><img src="./images/lunar-landing.png" alt="Guidance and control visualization for a lunar landing mission" /></figure>
-            <h3>Guidance, navigation, and control</h3>
+            <div class="area-carousel slides-3" aria-label="Guidance and control research image carousel">
+              <button class="carousel-toggle" type="button" aria-pressed="false" aria-label="Pause guidance and control image carousel">Pause</button>
+              <div class="carousel-track">
+                <figure class="carousel-slide"><img src="./images/home-carousels/gnc-inspection-missions.png" alt="Periodic spacecraft inspection mission visualization" loading="lazy" /><figcaption>Inspection missions</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/gnc-lunar-landing.png" alt="Lunar landing guidance and hazard-avoidance visualization" loading="lazy" /><figcaption>Lunar landing</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/gnc-ponn.png" alt="Pontryagin Neural Network optimal-control visualization" loading="lazy" /><figcaption>Pontryagin Neural Networks</figcaption></figure>
+              </div>
+            </div>
+            <h3><a href="./research/guidance-control/">Guidance, navigation, and control</a></h3>
             <p>Optimal and autonomous decision-making for landing, proximity operations, transfers, and other constrained aerospace missions.</p>
-          </a>
-          <a class="pillar" href="./research/astrodynamics/">
+            <a class="pillar-link" href="./research/guidance-control/">Explore GNC research →</a>
+          </article>
+          <article class="pillar">
             <span class="pillar-number">02 · SSA</span>
-            <figure class="pillar-image"><img src="./images/orbit-determination.png" alt="Orbit determination visualization for space situational awareness" /></figure>
-            <h3>Space situational awareness &amp; orbital sustainability</h3>
+            <div class="area-carousel slides-3" aria-label="Space situational awareness research image carousel">
+              <button class="carousel-toggle" type="button" aria-pressed="false" aria-label="Pause space situational awareness image carousel">Pause</button>
+              <div class="carousel-track">
+                <figure class="carousel-slide"><img src="./images/home-carousels/ssa-ssem.png" alt="Space environment evolution and orbital-capacity visualization" loading="lazy" /><figcaption>Space environment evolution</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/ssa-piod.png" alt="Physics-informed orbit determination visualization" loading="lazy" /><figcaption>Physics-informed orbit determination</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/ssa-light-curves.png" alt="Space-object light-curve analysis visualization" loading="lazy" /><figcaption>Light-curve intelligence</figcaption></figure>
+              </div>
+            </div>
+            <h3><a href="./research/astrodynamics/">Space situational awareness &amp; orbital sustainability</a></h3>
             <p>Orbit determination, object characterization, surveillance, and orbital-capacity analysis for a safer, more sustainable space environment.</p>
-          </a>
-          <a class="pillar" href="./research/nonlinear-dynamics/">
+            <a class="pillar-link" href="./research/astrodynamics/">Explore SSA research →</a>
+          </article>
+          <article class="pillar">
             <span class="pillar-number">03 · SciML</span>
-            <figure class="pillar-image"><img src="./images/safe-autonomy.png" alt="Scientific machine learning and certified controller visualization" /></figure>
-            <h3>Scientific machine learning for aerospace applications</h3>
+            <div class="area-carousel slides-3" aria-label="Scientific machine learning research image carousel">
+              <button class="carousel-toggle" type="button" aria-pressed="false" aria-label="Pause scientific machine learning image carousel">Pause</button>
+              <div class="carousel-track">
+                <figure class="carousel-slide"><img src="./images/home-carousels/sciml-saferl-1.png" alt="Safe reinforcement-learning controller visualization" loading="lazy" /><figcaption>Safe reinforcement learning</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/sciml-saferl-2.png" alt="Learning-enabled aerospace control analysis" loading="lazy" /><figcaption>Learning-enabled control</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/sciml-saferl-3.png" alt="Stability certification for a machine-learning controller" loading="lazy" /><figcaption>Controller certification</figcaption></figure>
+              </div>
+            </div>
+            <h3><a href="./research/nonlinear-dynamics/">Scientific machine learning for aerospace applications</a></h3>
             <p>Physics-informed learning, interpretable dynamics, and stability certification for safety-critical aerospace applications.</p>
-          </a>
-          <a class="pillar" href="./research/astrodynamics/">
+            <a class="pillar-link" href="./research/nonlinear-dynamics/">Explore SciML research →</a>
+          </article>
+          <article class="pillar">
             <span class="pillar-number">04 · Astro</span>
-            <figure class="pillar-image"><img src="./images/asteroid-dynamics.png" alt="Astrodynamics visualization around an irregular small body" /></figure>
-            <h3>Astrodynamics</h3>
+            <div class="area-carousel slides-3" aria-label="Astrodynamics research image carousel">
+              <button class="carousel-toggle" type="button" aria-pressed="false" aria-label="Pause astrodynamics image carousel">Pause</button>
+              <div class="carousel-track">
+                <figure class="carousel-slide"><img src="./images/home-carousels/astro-asteroids.png" alt="Spacecraft dynamics around an irregular asteroid" loading="lazy" /><figcaption>Asteroid dynamics</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/astro-flower-constellation.png" alt="Lattice Flower Constellation visualization" loading="lazy" /><figcaption>Flower constellations</figcaption></figure>
+                <figure class="carousel-slide"><img src="./images/home-carousels/astro-trajectory-optimization.png" alt="Aerospace trajectory-design visualization" loading="lazy" /><figcaption>Trajectory optimization</figcaption></figure>
+              </div>
+            </div>
+            <h3><a href="./research/astrodynamics/">Astrodynamics</a></h3>
             <p>Orbital mechanics, dynamical systems, mission design, and environmental evolution from Earth orbit to cislunar and small-body regimes.</p>
-          </a>
+            <a class="pillar-link" href="./research/astrodynamics/">Explore astrodynamics →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -184,7 +217,7 @@
     <div class="shell footer-grid">
       <a class="brand" href="./" aria-label="CIRO home">
         <span class="orbital-mark" aria-hidden="true"><span class="mark-core"></span><span class="mark-orbit mark-orbit-one"></span><span class="mark-orbit mark-orbit-two"></span><span class="mark-dot"></span></span>
-        <span class="brand-copy"><strong>CIRO</strong><small>Computational Intelligence for Aerospace Systems</small></span>
+        <span class="brand-copy"><strong>CIRO</strong><small>Computational Intelligence for Robotics &amp; Orbital Dynamics</small></span>
       </a>
       <address class="footer-address">
         <strong>CIRO Laboratory</strong>

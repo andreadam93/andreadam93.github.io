@@ -255,3 +255,227 @@
     transition: none;
   }
 }
+
+/* Orbital research map and accessible area carousels. */
+.research-map {
+  min-height: 620px;
+}
+
+.research-map::before {
+  inset: 18% 0;
+  border-color: rgba(100, 216, 218, 0.34);
+  transform: rotate(-25deg);
+}
+
+.research-map-lines {
+  width: 100%;
+  height: 42%;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  transform: translate(-50%, -50%) rotate(25deg);
+}
+
+.research-map-lines::after {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(255, 138, 42, 0.28);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.research-map-logo {
+  width: 360px;
+  height: 360px;
+  padding: 10px;
+}
+
+.research-node {
+  width: 116px;
+  height: 116px;
+  padding: 14px;
+}
+
+.node-gnc { left: 0; top: 4%; }
+.node-ssa { right: 0; top: 6%; }
+.node-sciml { right: 0; bottom: 4%; }
+.node-astro { left: 2%; bottom: 2%; }
+
+.image-pillars .pillar {
+  min-height: 570px;
+  padding: 20px;
+}
+
+.area-carousel {
+  height: 190px;
+  margin: 20px -1px 25px;
+  overflow: hidden;
+  position: relative;
+  background: #dce3df;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  animation: area-carousel-three 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+.area-carousel:hover .carousel-track,
+.area-carousel:focus-within .carousel-track,
+.area-carousel.is-paused .carousel-track {
+  animation-play-state: paused;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(4, 17, 31, 0.82));
+  pointer-events: none;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.05);
+  transition: transform 0.55s ease, filter 0.3s ease;
+}
+
+.area-carousel:hover .carousel-slide img {
+  transform: scale(1.025);
+  filter: saturate(1) contrast(1.04);
+}
+
+.carousel-slide figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.carousel-toggle {
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  right: 10px;
+  padding: 7px 10px;
+  color: #fff;
+  background: rgba(4, 17, 31, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.carousel-toggle:hover,
+.carousel-toggle:focus-visible {
+  background: #08a6aa;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.image-pillars .pillar h3 {
+  max-width: none;
+}
+
+.image-pillars .pillar h3 a:hover,
+.image-pillars .pillar h3 a:focus-visible {
+  color: #087d81;
+  outline: none;
+}
+
+.pillar-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding-bottom: 4px;
+  color: #087d81;
+  border-bottom: 1px solid currentColor;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.pillar-link:hover,
+.pillar-link:focus-visible {
+  color: #071a2f;
+  outline: none;
+}
+
+@keyframes area-carousel-three {
+  0%, 27% { transform: translateX(0); }
+  33%, 60% { transform: translateX(-100%); }
+  66%, 93% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 1000px) {
+  .research-map {
+    min-height: 610px;
+  }
+
+  .image-pillars .pillar {
+    min-height: 540px;
+  }
+}
+
+@media (max-width: 760px) {
+  .research-map {
+    min-height: 540px;
+  }
+
+  .research-map-logo {
+    width: 255px;
+    height: 255px;
+  }
+
+  .research-map-lines::after {
+    width: 280px;
+    height: 280px;
+  }
+
+  .research-node {
+    width: 106px;
+    height: 106px;
+  }
+
+  .area-carousel {
+    height: 220px;
+  }
+
+  .image-pillars .pillar {
+    min-height: 515px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation: none;
+  }
+
+  .carousel-toggle {
+    display: none;
+  }
+}
