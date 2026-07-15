@@ -12,6 +12,7 @@ document.querySelectorAll(".area-carousel").forEach((carousel) => {
   let timer = null;
   let manuallyPaused = false;
   let interacting = false;
+  let mediaPlaying = false;
 
   const label = carousel.getAttribute("aria-label") || "research image carousel";
   previous.setAttribute("aria-label", "Previous image in " + label);
@@ -31,7 +32,7 @@ document.querySelectorAll(".area-carousel").forEach((carousel) => {
 
   const start = () => {
     stop();
-    if (reduceMotion || manuallyPaused || interacting || document.hidden) return;
+    if (reduceMotion || manuallyPaused || interacting || mediaPlaying || document.hidden) return;
     timer = window.setInterval(() => {
       index = (index + 1) % slides.length;
       render();
@@ -79,6 +80,21 @@ document.querySelectorAll(".area-carousel").forEach((carousel) => {
     }
   });
 
+
+  carousel.querySelectorAll("video").forEach((video) => {
+    video.addEventListener("play", () => {
+      mediaPlaying = true;
+      stop();
+    });
+
+    const resume = () => {
+      mediaPlaying = false;
+      start();
+    };
+
+    video.addEventListener("pause", resume);
+    video.addEventListener("ended", resume);
+  });
   document.addEventListener("visibilitychange", () => {
     document.hidden ? stop() : start();
   });
