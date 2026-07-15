@@ -1,0 +1,141 @@
+.inline-email-link {
+  color: #087d81;
+  border-bottom: 1px solid currentColor;
+  font-weight: 800;
+}
+
+.application-documents {
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+  list-style: none;
+  counter-reset: application-document;
+}
+
+.application-documents li {
+  position: relative;
+  padding-left: 35px;
+  color: #68737c;
+  font-size: 13px;
+  line-height: 1.6;
+  counter-increment: application-document;
+}
+
+.application-documents li::before {
+  content: counter(application-document);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #087d81;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.contact-form-section {
+  background: #f5f1e8;
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: start;
+  gap: 80px;
+}
+
+.contact-form-grid > div > h2 {
+  margin: 12px 0 24px;
+  font: 400 clamp(40px, 5vw, 64px)/1.04 Georgia, serif;
+  letter-spacing: -0.04em;
+}
+
+.contact-form-grid > div > p:last-child {
+  color: #68737c;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.contact-form-grid > div > p:last-child a {
+  color: #087d81;
+  border-bottom: 1px solid currentColor;
+  font-weight: 800;
+}
+
+.contact-inquiry-form {
+  padding: 38px;
+  display: grid;
+  gap: 22px;
+  background: #fff;
+  border: 1px solid #d8ddd9;
+  box-shadow: 0 24px 55px rgba(7, 26, 47, 0.09);
+}
+
+.form-field {
+  display: grid;
+  gap: 9px;
+}
+
+.form-field label {
+  color: #071a2f;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  color: #14202a;
+  background: #fbfaf7;
+  border: 1px solid #cbd2ce;
+  border-radius: 4px;
+  font: 400 15px/1.5 Helvetica Neue, Arial, sans-serif;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #087d81;
+  outline: 3px solid rgba(8, 166, 170, 0.18);
+}
+
+.contact-inquiry-form .button {
+  justify-self: start;
+}
+
+.form-note,
+.form-status {
+  margin: 0;
+  color: #68737c;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.form-status {
+  min-height: 18px;
+  color: #087d81;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-inquiry-form {
+    padding: 25px 20px;
+  }
+}
