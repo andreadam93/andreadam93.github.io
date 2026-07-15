@@ -292,3 +292,15 @@
 .research-video-slide {
   background: #02070c;
 }
+/* Keep the requested GNC sequence even before the carousel script finishes loading. */
+#pontryagin-neural-networks { order: 1; }
+#bellman-neural-networks { order: 2; }
+#inspection-missions { order: 3; }
+#lunar-landing { order: 4; }
+#asteroid-proximity-operations { order: 5; }
+
+.research-video-slide video {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+}

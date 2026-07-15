@@ -1,3 +1,96 @@
+const guidanceTopicOrder = [
+  "pontryagin-neural-networks",
+  "bellman-neural-networks",
+  "inspection-missions",
+  "lunar-landing",
+  "asteroid-proximity-operations",
+];
+
+const guidanceTopicList = document.querySelector(".research-topic-list");
+const guidanceChronology = document.querySelector(".research-chronology");
+const guidanceTopicLabels = ["01 - 2025 - Most recent", "02 - 2022", "03 - 2022", "04 - 2021", "05 - 2023"];
+if (guidanceTopicList && guidanceTopicOrder.every((id) => document.getElementById(id))) {
+  if (guidanceChronology) {
+    guidanceChronology.textContent = "Topics are arranged from neural optimal control through mission applications.";
+  }
+
+  guidanceTopicOrder.forEach((id, position) => {
+    const topic = document.getElementById(id);
+    const index = topic.querySelector(".research-topic-index");
+
+    guidanceTopicList.append(topic);
+    if (index) index.textContent = guidanceTopicLabels[position];
+  });
+}
+
+const asteroidTrack = document.querySelector("#asteroid-proximity-operations .carousel-track");
+const asteroidCopy = document.querySelector("#asteroid-proximity-operations .research-topic-copy p:last-of-type");
+if (asteroidCopy) {
+  asteroidCopy.textContent += " The expanded gallery includes hopping trajectories at Itokawa and Bennu, together with obstacle-avoidance and RRT planning demonstrations.";
+}
+
+if (asteroidTrack) {
+  const asteroidMedia = [
+    {
+      type: "image",
+      src: "../../images/research/guidance-control/asteroid-proximity/itokawa-trajectory.png",
+      alt: "Hopping and obstacle-avoidance trajectory around asteroid Itokawa",
+    },
+    {
+      type: "image",
+      src: "../../images/research/guidance-control/asteroid-proximity/bennu-trajectory.png",
+      alt: "Hopping and obstacle-avoidance trajectory around asteroid Bennu",
+    },
+    {
+      type: "video",
+      src: "../../videos/asteroid-rrt.mp4",
+      label: "Collision-aware RRT trajectory planning around an asteroid",
+      poster: "../../images/research/guidance-control/asteroid-proximity/bennu-trajectory.png",
+    },
+    {
+      type: "video",
+      src: "../../videos/itokawa-hopping.mp4",
+      label: "Hopping trajectory demonstration around asteroid Itokawa",
+      poster: "../../images/research/guidance-control/asteroid-proximity/itokawa-trajectory.png",
+    },
+  ];
+
+  asteroidMedia.forEach((media) => {
+    const slide = document.createElement("figure");
+    slide.className = "carousel-slide" + (media.type === "video" ? " research-video-slide" : "");
+
+    if (media.type === "image") {
+      const image = document.createElement("img");
+      image.src = media.src;
+      image.alt = media.alt;
+      image.loading = "lazy";
+      image.decoding = "async";
+      slide.append(image);
+    } else {
+      const video = document.createElement("video");
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.setAttribute("aria-label", media.label);
+      video.poster = media.poster;
+      const source = document.createElement("source");
+      source.src = media.src;
+      source.type = "video/mp4";
+      video.append(source);
+      slide.append(video);
+    }
+
+    asteroidTrack.append(slide);
+  });
+}
+
+document.querySelectorAll("video").forEach((video) => {
+  video.preload = "auto";
+  video.setAttribute("controlslist", "nodownload noremoteplayback");
+  video.disablePictureInPicture = true;
+  video.addEventListener("contextmenu", (event) => event.preventDefault());
+});
+
 document.querySelectorAll(".area-carousel").forEach((carousel) => {
   const track = carousel.querySelector(".carousel-track");
   const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));

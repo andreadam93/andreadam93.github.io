@@ -31,7 +31,7 @@ if (-not (Test-CiroPreview)) {
 
     $python = $pythonCandidates[0].Source
     Start-Process -FilePath $python -ArgumentList @(
-        "-m", "http.server", "8000",
+        (Join-Path $root "preview-server.py"), "8000",
         "--bind", "127.0.0.1",
         "--directory", "docs"
     ) -WorkingDirectory $root -WindowStyle Hidden
