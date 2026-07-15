@@ -14,26 +14,30 @@ function Test-CiroPreview {
 }
 
 if (-not (Test-CiroPreview)) {
-    $pythonCandidates = @(
-        (Get-Command py -ErrorAction SilentlyContinue),
-        (Get-Command python -ErrorAction SilentlyContinue),
-        (Get-Command python3 -ErrorAction SilentlyContinue)
-    ) | Where-Object { $_ }
-
     $bundledPython = "C:\Users\andre\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
-    if ((-not $pythonCandidates) -and (Test-Path -LiteralPath $bundledPython)) {
-        $pythonCandidates = @([PSCustomObject]@{ Source = $bundledPython })
+    if (Test-Path -LiteralPath $bundledPython) {
+        $python = $bundledPython
+    }
+    else {
+        $pythonCandidates = @(
+            (Get-Command py -ErrorAction SilentlyContinue),
+            (Get-Command python -ErrorAction SilentlyContinue),
+            (Get-Command python3 -ErrorAction SilentlyContinue)
+        ) | Where-Object { $_ }
+
+        if (-not $pythonCandidates) {
+            throw "Python was not found. Install Python or use the GitHub Codespaces preview."
+        }
+
+        $python = $pythonCandidates[0].Source
     }
 
-    if (-not $pythonCandidates) {
-        throw "Python was not found. Install Python or use the GitHub Codespaces preview."
-    }
-
-    $python = $pythonCandidates[0].Source
+    $serverScript = Join-Path $root "preview-server.py"
+    $docsDirectory = Join-Path $root "docs"
     Start-Process -FilePath $python -ArgumentList @(
-        (Join-Path $root "preview-server.py"), "8000",
+        "`"$serverScript`"", "8000",
         "--bind", "127.0.0.1",
-        "--directory", "docs"
+        "--directory", "`"$docsDirectory`""
     ) -WorkingDirectory $root -WindowStyle Hidden
 
     $ready = $false

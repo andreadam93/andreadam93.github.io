@@ -86,9 +86,10 @@ def main() -> None:
     parser.add_argument("--bind", default="127.0.0.1")
     parser.add_argument("--directory", default=os.getcwd())
     args = parser.parse_args()
+    directory = os.path.abspath(args.directory)
 
     handler = lambda *handler_args, **kwargs: RangeRequestHandler(
-        *handler_args, directory=args.directory, **kwargs
+        *handler_args, directory=directory, **kwargs
     )
     ThreadingHTTPServer((args.bind, args.port), handler).serve_forever()
 
