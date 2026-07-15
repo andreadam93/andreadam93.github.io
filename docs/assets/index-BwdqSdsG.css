@@ -77,11 +77,10 @@
 .site-header .brand {
   min-width: 72px;
   min-height: 78px;
-  gap: 0;
+  gap: 13px;
 }
 
-.site-header .brand .orbital-mark,
-.site-header .brand .brand-copy {
+.site-header .brand .orbital-mark {
   display: none;
 }
 
