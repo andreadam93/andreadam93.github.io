@@ -576,3 +576,8 @@
     transition: none;
   }
 }
+
+/* Caption-free research carousel. */
+.carousel-slide::after {
+  display: none;
+}
