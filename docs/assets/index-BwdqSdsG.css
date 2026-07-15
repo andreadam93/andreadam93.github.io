@@ -73,3 +73,37 @@
 .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{display:grid}
 .mobile-research-links{padding:5px 0 8px 15px;display:grid;background:#f5f1e8}
 .mobile-menu .mobile-research-links a{padding:10px 11px;color:#52606a;font-size:11px}
+/* Complete original CIRO emblem in the shared navigation bar. */
+.site-header .brand {
+  min-width: 72px;
+  min-height: 78px;
+  gap: 0;
+}
+
+.site-header .brand .orbital-mark,
+.site-header .brand .brand-copy {
+  display: none;
+}
+
+.site-header .brand::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+  display: block;
+  background: url("../images/ciro-badge.png") center / contain no-repeat;
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.22));
+}
+
+@media (max-width: 760px) {
+  .site-header .brand {
+    min-width: 58px;
+    min-height: 68px;
+  }
+
+  .site-header .brand::before {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+}
