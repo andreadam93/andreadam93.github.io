@@ -479,3 +479,100 @@
     display: none;
   }
 }
+/* Manually navigable carousels, tighter orbital nodes, and footer email. */
+.research-map::before {
+  inset: 16% 1%;
+  transform: rotate(-18deg);
+}
+
+.research-map-lines {
+  width: 98%;
+  height: 68%;
+  transform: translate(-50%, -50%) rotate(18deg);
+}
+
+.node-gnc { left: 4%; top: 14%; }
+.node-ssa { right: 4%; top: 14%; }
+.node-sciml { right: 4%; bottom: 14%; }
+.node-astro { left: 4%; bottom: 14%; }
+
+.carousel-track {
+  animation: none;
+  transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: rgba(4, 17, 31, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  font: 400 27px/1 Georgia, serif;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  background: #08a6aa;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.footer-email {
+  width: fit-content;
+  margin-top: 10px;
+  padding: 9px 13px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-email:hover,
+.footer-email:focus-visible {
+  background: #08a6aa;
+  border-color: #64d8da;
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .research-map::before,
+  .research-map-lines {
+    display: block;
+  }
+
+  .research-map::before {
+    inset: 19% 0;
+  }
+
+  .research-map-lines {
+    width: 102%;
+    height: 63%;
+  }
+
+  .node-gnc { left: 0; top: 14%; }
+  .node-ssa { right: 0; top: 14%; }
+  .node-sciml { right: 0; bottom: 14%; }
+  .node-astro { left: 0; bottom: 14%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+  }
+}
