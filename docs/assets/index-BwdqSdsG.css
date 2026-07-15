@@ -61,3 +61,15 @@
     flex-basis: 72px;
   }
 }
+/* Site-wide Research dropdown. */
+.nav-dropdown{position:relative;display:flex;align-items:center;min-height:70px}
+.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:6px}
+.nav-dropdown-trigger:after{content:"⌄";color:#64d8da;font-size:12px}
+.nav-dropdown-menu{position:absolute;z-index:40;top:calc(100% - 2px);left:50%;width:330px;padding:12px;display:none;background:#fff;color:#071a2f;border:1px solid #d8ddd9;box-shadow:0 22px 55px rgba(4,17,31,.24);transform:translateX(-50%)}
+.nav-dropdown-menu:before{content:"";position:absolute;left:0;right:0;top:-13px;height:13px}
+.nav-dropdown-menu a{padding:12px 13px;display:block;border-bottom:1px solid #e5e8e4;font-size:12px;font-weight:750;line-height:1.35}
+.nav-dropdown-menu a:last-child{border-bottom:0}
+.nav-dropdown-menu a:hover,.nav-dropdown-menu a:focus-visible{color:#087d81;background:#f5f1e8;outline:none}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{display:grid}
+.mobile-research-links{padding:5px 0 8px 15px;display:grid;background:#f5f1e8}
+.mobile-menu .mobile-research-links a{padding:10px 11px;color:#52606a;font-size:11px}
