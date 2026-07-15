@@ -1,0 +1,12 @@
+.news-index img {
+  height: auto;
+  aspect-ratio: 1150 / 411;
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 760px) {
+  .news-index article {
+    gap: 34px;
+  }
+}

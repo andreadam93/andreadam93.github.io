@@ -1,0 +1,48 @@
+.teaching-quote-section {
+  padding: 68px 0 10px;
+  background: #fbfaf7;
+}
+
+.teaching-quote {
+  max-width: 980px;
+  margin: 0;
+  padding: 36px 42px;
+  color: #071a2f;
+  background: #f5f1e8;
+  border-left: 5px solid #08a6aa;
+}
+
+.teaching-quote p {
+  margin: 0;
+  font: 400 clamp(25px, 3vw, 40px)/1.35 Georgia, serif;
+  letter-spacing: -0.025em;
+}
+
+.course-list {
+  margin: 20px 0 34px;
+  display: grid;
+  gap: 16px;
+}
+
+.course-list p {
+  margin: 0;
+  padding: 18px 20px;
+  color: #52606a;
+  background: #f5f1e8;
+  border-left: 3px solid #08a6aa;
+  line-height: 1.65;
+}
+
+.course-list strong {
+  color: #071a2f;
+}
+
+@media (max-width: 760px) {
+  .teaching-quote-section {
+    padding-top: 42px;
+  }
+
+  .teaching-quote {
+    padding: 28px 24px;
+  }
+}
