@@ -64,8 +64,7 @@
   padding: 30px;
 }
 
-.research-overview-card span,
-.research-topic-index {
+.research-overview-card span {
   color: #087d81;
   letter-spacing: 0.12em;
   text-transform: uppercase;

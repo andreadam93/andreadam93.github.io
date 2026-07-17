@@ -7,15 +7,12 @@ const guidanceTopicOrder = [
 ];
 
 const guidanceTopicList = document.querySelector(".research-topic-list");
-const guidanceTopicLabels = ["01 - 2025", "02 - 2022", "03 - 2022", "04 - 2021", "05 - 2023"];
 if (guidanceTopicList && guidanceTopicOrder.every((id) => document.getElementById(id))) {
 
-  guidanceTopicOrder.forEach((id, position) => {
+  guidanceTopicOrder.forEach((id) => {
     const topic = document.getElementById(id);
-    const index = topic.querySelector(".research-topic-index");
 
     guidanceTopicList.append(topic);
-    if (index) index.textContent = guidanceTopicLabels[position];
   });
 }
 
